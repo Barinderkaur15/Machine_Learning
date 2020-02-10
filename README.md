@@ -28,7 +28,8 @@ In this project, we are building anf evaluating several machine learning models 
 Class imbalance refers to a situation in which the existing classes in a dataset aren’t equally represented.one strategy to deal with class imbalance is to use appropriate metrics to evaluate a model’s performance, such as precision and recall.
 Another strategy is to use oversampling. The idea is simple and intuitive: If one class has too few instances in the training set, we choose more instances from that class for training until it’s larger.
 
-##Naive Random Oversampling 
+
+### Naive Random Oversampling 
 Accuracy Score : 65.03%
 It is the ratio of number of correct predictions to the total number of input samples.It works well only if there are equal number of samples belonging to each class.Accuracy Score of 65.03% s not a good score, but An accuracy score is not always an appropriate or a meaningful performance metric.<BR>
   
@@ -43,7 +44,7 @@ It is the ratio of number of correct predictions to the total number of input sa
   
  ***F1 score*** - F1 Score is the weighted average of Precision and Recall. Therefore, this score takes both false positives and false negatives into account. Intuitively it is not as easy to understand as accuracy, but F1 is usually more useful than accuracy, especially if you have an uneven class distribution. Accuracy works best if false positives and false negatives have similar cost. If the cost of false positives and false negatives are very different, it’s better to look at both Precision and Recall. In our case, F1 score is 0.75 which states some what balance between precision and sesitivity 
  
-  
+![Capture_part1](https://user-images.githubusercontent.com/55926650/74115442-163b0180-4b64-11ea-8886-2d8ac1134fc2.PNG)  
 While precisioand recall are high for the majority class, precision is low for the minority class.  <BR>
 
 
@@ -59,16 +60,19 @@ Although SMOTE reduces the risk of oversampling, it does not always outperform r
  However the Results in this case het more worse then random sampling .
   
 A reason could indeed be that we trained our classifiers using few samples. In general, the more imbalanced the dataset the more samples will be discarded when undersampling, therefore throwing away potentially useful information.
-
+![Capture_undersampling](https://user-images.githubusercontent.com/55926650/74115443-16d39800-4b64-11ea-9021-614805119d17.PNG)
 **SMOTEENN ** <BR>
   SMOTEENN combines the SMOTE and Edited Nearest Neighbors (ENN) algorithms. SMOTEENN is a two-step process:<BR>
   1.Oversample the minority class with SMOTE
   2. Clean the resulting data with Undersampling strategy
-  
+  ![combination](https://user-images.githubusercontent.com/55926650/74115444-16d39800-4b64-11ea-81de-83f000fa80bc.PNG)
  Combining these two stargies help in improving the metrices .This model may not be the best one for preventing  fraudulent loan applications, but combining both obr sampling and undersampling techniqies gives us better represntation about the risk 
- 
+ <BR>
  ==================================================================
+### Ensemble Learning
+The concept of ensemble learning is the process of combining multiple models, like decision tree algorithms, to help improve the accuracy and robustness, as well as decrease variance of the model, and therefore increase the overall performance of the model.
+<BR>
 
-
-  
-  
+***BalancedRandomForestClassifier** <BR>
+A balanced random forest randomly under-samples each boostrap sample to balance it.
+ After using this model  the accuracy score increases to 78% and F1 is 94% which is nearly perfect and  states very strong balance between precision and sesitivity 
