@@ -61,15 +61,18 @@ Although SMOTE reduces the risk of oversampling, it does not always outperform r
   
 A reason could indeed be that we trained our classifiers using few samples. In general, the more imbalanced the dataset the more samples will be discarded when undersampling, therefore throwing away potentially useful information.
 ![Capture_undersampling](https://user-images.githubusercontent.com/55926650/74115443-16d39800-4b64-11ea-9021-614805119d17.PNG)
+
+
 **SMOTEENN ** <BR>
+  
   SMOTEENN combines the SMOTE and Edited Nearest Neighbors (ENN) algorithms. SMOTEENN is a two-step process:<BR>
   1.Oversample the minority class with SMOTE
   2. Clean the resulting data with Undersampling strategy
   ![combination](https://user-images.githubusercontent.com/55926650/74115444-16d39800-4b64-11ea-81de-83f000fa80bc.PNG)
  Combining these two stargies help in improving the metrices .This model may not be the best one for preventing  fraudulent loan applications, but combining both obr sampling and undersampling techniqies gives us better represntation about the risk 
  <BR>
- ==================================================================
-### Ensemble Learning
+
+### Ensemble Learning ###
 The concept of ensemble learning is the process of combining multiple models, like decision tree algorithms, to help improve the accuracy and robustness, as well as decrease variance of the model, and therefore increase the overall performance of the model.
 <BR>
 
